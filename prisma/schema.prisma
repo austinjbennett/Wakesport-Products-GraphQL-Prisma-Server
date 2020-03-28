@@ -15,4 +15,5 @@ model Product {
   category    String
   description String
   price       String
+  imageUrl    String
 }

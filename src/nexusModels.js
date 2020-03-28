@@ -10,6 +10,7 @@ const Product = objectType({
 		t.model.category()
 		t.model.description()
 		t.model.price()
+		t.model.imageUrl()
 	}
 })
 

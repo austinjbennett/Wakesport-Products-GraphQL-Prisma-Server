@@ -4,14 +4,25 @@
 
 scalar DateTime
 
+type Mutation {
+  createProduct(category: String, description: String, imageUrl: String!, name: String!, price: String!): Product!
+  deleteOneProduct(where: ProductWhereUniqueInput!): Product
+  updateProduct(category: String, description: String, id: ID, imageUrl: String, name: String, price: String): Product!
+}
+
 type Product {
   category: String!
   createdAt: DateTime!
   description: String!
   id: String!
+  imageUrl: String!
   name: String!
   price: String!
   updatedAt: DateTime!
+}
+
+input ProductWhereUniqueInput {
+  id: String
 }
 
 type Query {

@@ -4,50 +4,50 @@ export const Mutation = mutationType({
 	name: 'Mutation',
 	definition(t) {
 
-		t.crud.deleteOneCourse()
+		t.crud.deleteOneProduct();
 		
-		t.field('createCourse', {
-			type: 'Course',
+		t.field('createProduct', {
+			type: 'Product',
 			args: {
 				name: stringArg({ nullable: false }),
+				category: stringArg(),
 				description: stringArg(),
-				defaultCredits: stringArg(),
-				courseCode: stringArg({ nullable: false }),
-				termsOffered: stringArg(),
+				price: stringArg({ nullable: false }),
+				imageUrl: stringArg({ nullable: false }),
 			},
-			resolve: (parent, { name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
-				return ctx.prisma.course.create({
+			resolve: (parent, { name, category, description, price, imageUrl }, ctx) => {
+				return ctx.prisma.product.create({
 					data: {
 						name,
+						category,
 						description,
-						defaultCredits,
-						courseCode,
-						termsOffered,
-					}
-				})
-			}
-		})
+						price,
+						imageUrl,
+					},
+				});
+			},
+		});
 
-		t.field('updateCourse', {
-			type: 'Course',
+		t.field('updateProduct', {
+			type: 'Product',
 			args: { id: idArg(),
 				name: stringArg(),
+				category: stringArg(),
 				description: stringArg(),
-				defaultCredits: stringArg(),
-				courseCode: stringArg(),
-				termsOffered: stringArg(),
+				price: stringArg(),
+				imageUrl: stringArg(),
 			},
-			resolve: (parent, { id, name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
-				return ctx.prisma.course.update({
+			resolve: (parent, { id, name, category, description, price, imageUrl }, ctx) => {
+				return ctx.prisma.product.update({
 					where: {
 						id
 					},
 					data: {
 						name,
+						category,
 						description,
-						defaultCredits,
-						courseCode,
-						termsOffered,
+						price,
+						imageUrl,
 					}
 				})
 			}

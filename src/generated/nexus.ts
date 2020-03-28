@@ -19,12 +19,16 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  ProductWhereUniqueInput: { // input type
+    id?: string | null; // String
+  }
 }
 
 export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
+  Mutation: {};
   Product: prisma.Product;
   Query: {};
   String: string;
@@ -36,14 +40,21 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  ProductWhereUniqueInput: NexusGenInputs['ProductWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
+  Mutation: { // field return type
+    createProduct: NexusGenRootTypes['Product']; // Product!
+    deleteOneProduct: NexusGenRootTypes['Product'] | null; // Product
+    updateProduct: NexusGenRootTypes['Product']; // Product!
+  }
   Product: { // field return type
     category: string; // String!
     createdAt: any; // DateTime!
     description: string; // String!
     id: string; // String!
+    imageUrl: string; // String!
     name: string; // String!
     price: string; // String!
     updatedAt: any; // DateTime!
@@ -55,6 +66,26 @@ export interface NexusGenFieldTypes {
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createProduct: { // args
+      category?: string | null; // String
+      description?: string | null; // String
+      imageUrl: string; // String!
+      name: string; // String!
+      price: string; // String!
+    }
+    deleteOneProduct: { // args
+      where: NexusGenInputs['ProductWhereUniqueInput']; // ProductWhereUniqueInput!
+    }
+    updateProduct: { // args
+      category?: string | null; // String
+      description?: string | null; // String
+      id?: string | null; // ID
+      imageUrl?: string | null; // String
+      name?: string | null; // String
+      price?: string | null; // String
+    }
+  }
   Query: {
     Product: { // args
       id?: string | null; // ID
@@ -70,9 +101,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Product" | "Query";
+export type NexusGenObjectNames = "Mutation" | "Product" | "Query";
 
-export type NexusGenInputNames = never;
+export type NexusGenInputNames = "ProductWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
