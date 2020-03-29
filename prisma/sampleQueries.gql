@@ -19,3 +19,19 @@ query singleProduct {
 		imageUrl
 	}
 }
+
+mutation addProduct {
+	createProduct(
+		name: "Hyperlite Riot Nova"
+		category: "Wakeboards"
+		description: "This is the Riot Nova, it's sick."
+		price: "$799"
+		imageUrl: "https://www.hyperlite.com/images/square.png"
+	) {
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
