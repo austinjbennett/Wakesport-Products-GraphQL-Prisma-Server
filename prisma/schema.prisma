@@ -14,6 +14,6 @@ model Product {
   name        String
   category    String
   description String
-  price       String
+  price       Int
   imageUrl    String
 }

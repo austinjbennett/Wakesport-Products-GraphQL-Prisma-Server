@@ -1,3 +1,4 @@
+# Write your query or mutation here
 query allProducts {
 	Products {
 		id
@@ -9,8 +10,30 @@ query allProducts {
 	}
 }
 
-query singleProduct {
+query singleProducts {
 	Product(id: "ck8atgsrx0007kr7b3w3azya1") {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
+
+query wakeboards {
+	Wakeboards {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
+
+query productCategory {
+	Category(category: "Wakeboards") {
 		id
 		name
 		category
@@ -27,6 +50,19 @@ mutation addProduct {
 		description: "This is the Riot Nova, it's sick."
 		price: "$799"
 		imageUrl: "https://www.hyperlite.com/images/square.png"
+	) {
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
+
+mutation updateProduct {
+	updateProduct(
+		id: "ck8ckndoo0000kb7bi8gdw2li"
+		description: "This is teh best wakeboard in existence. Ever. Don't even argue."
 	) {
 		name
 		category

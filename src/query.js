@@ -31,5 +31,34 @@ export const Query = queryType({
 				});
 			},
 		});
+
+		t.list.field('Wakeboards', {
+			type: 'Product',
+			// args: { category: stringArg() },
+			resolve: (parent, { category }, ctx) => {
+				return ctx.prisma.product.findMany({
+					where: {
+						category: {
+							equals: 'Wakeboards',
+						},
+					},
+				});
+			},
+		});
+
+		t.list.field('Category', {
+			type: 'Product',
+			args: { category: stringArg() },
+			resolve: (parent, { category }, ctx) => {
+				return ctx.prisma.product.findMany({
+					where: {
+						category: {
+							equals: category,
+						},
+					},
+				});
+			},
+		});
+
 	},
 });

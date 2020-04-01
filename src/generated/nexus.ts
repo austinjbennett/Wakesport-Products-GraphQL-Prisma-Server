@@ -60,8 +60,10 @@ export interface NexusGenFieldTypes {
     updatedAt: any; // DateTime!
   }
   Query: { // field return type
+    Category: NexusGenRootTypes['Product'][]; // [Product!]!
     Product: NexusGenRootTypes['Product'] | null; // Product
     Products: NexusGenRootTypes['Product'][]; // [Product!]!
+    Wakeboards: NexusGenRootTypes['Product'][]; // [Product!]!
   }
 }
 
@@ -87,6 +89,9 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    Category: { // args
+      category?: string | null; // String
+    }
     Product: { // args
       id?: string | null; // ID
     }

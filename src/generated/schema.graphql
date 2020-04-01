@@ -26,6 +26,8 @@ input ProductWhereUniqueInput {
 }
 
 type Query {
+  Category(category: String): [Product!]!
   Product(id: ID): Product
   Products(searchString: String): [Product!]!
+  Wakeboards: [Product!]!
 }
