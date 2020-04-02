@@ -2,27 +2,27 @@
 
 GraphQL, PostgreSQL, Docker, Prisma, Nexus, Apollo
 
--   Prisma as your data modeling tool  
-    Prisma was used, see prisma folder here: https://github.com/skaduusch/graphql-postgres-docker/tree/master/prisma
+:star: Prisma as your data modeling tool  
+ Prisma was used, see prisma folder here: https://github.com/skaduusch/graphql-postgres-docker/tree/master/prisma
 
--   Docker-based PostgreSQL, MySQL, or MongoDB as your data store  
-    To launch docker with a PostgreSQL database run:
+:star: Docker-based PostgreSQL, MySQL, or MongoDB as your data store  
+ To launch docker with a PostgreSQL database run:
 
 ```
 npm run launchDocker
 ```
 
--   At least 3 Query resolvers to get data from your server  
-    See queries here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/query.js
+:star: At least 3 Query resolvers to get data from your server  
+ See queries here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/query.js
 
--   At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
--   At least 1 Mutation resolver allowing users to delete an item.  
-    See mutations here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/mutation.js
+:star: At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
+:star: At least 1 Mutation resolver allowing users to delete an item.  
+ See mutations here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/mutation.js
 
--   Your datastore will contain at least 25 items  
-    Items populated from this json file: https://github.com/skaduusch/graphql-postgres-docker/blob/master/prisma/data/wake-products.json
+:star: Your datastore will contain at least 25 items  
+ Items populated/seeded from this json file: https://github.com/skaduusch/graphql-postgres-docker/blob/master/prisma/data/wake-products.json
 
--   Your app will be deployable locally using Docker and will have seed data entered into the datastore.
+:star: Your app will be deployable locally using Docker and will have seed data entered into the datastore.
 
 ## To deploy the server once downloading the code base run the following npm scripts:
 
@@ -134,11 +134,11 @@ mutation deleteProduct {
 }
 ```
 
-</details><br>
+</details>
 
--   All of your source code will be properly uploaded to GitHub :octocat:  
-    See here: https://github.com/skaduusch/graphql-postgres-docker
+:star: All of your source code will be properly uploaded to GitHub :octocat:  
+ See here: https://github.com/skaduusch/graphql-postgres-docker
 
--   Your ReadMe file will accurately describe your server install and run process and how to use the APIs
+:star: Your ReadMe file will accurately describe your server install and run process and how to use the APIs
 
-*   [x] You're looking at it. :metal:
+-   [x] You're looking at it. :metal:
