@@ -16,7 +16,7 @@ function loadProducts() {
 				name: product.title,
 				category: product.productCategory,
 				description: product.description,
-				price: product.price.$numberInt,
+				price: parseInt(product.price.$numberInt),
 				imageUrl: product.imageUrl,
 			},
 		}

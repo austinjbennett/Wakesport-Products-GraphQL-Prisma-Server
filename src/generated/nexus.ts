@@ -56,7 +56,7 @@ export interface NexusGenFieldTypes {
     id: string; // String!
     imageUrl: string; // String!
     name: string; // String!
-    price: string; // String!
+    price: number; // Int!
     updatedAt: any; // DateTime!
   }
   Query: { // field return type

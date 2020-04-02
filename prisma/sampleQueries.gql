@@ -48,9 +48,10 @@ mutation addProduct {
 		name: "Hyperlite Riot Nova"
 		category: "Wakeboards"
 		description: "This is the Riot Nova, it's sick."
-		price: "$799"
+		price: 799
 		imageUrl: "https://www.hyperlite.com/images/square.png"
 	) {
+		id
 		name
 		category
 		description
@@ -64,10 +65,19 @@ mutation updateProduct {
 		id: "ck8ckndoo0000kb7bi8gdw2li"
 		description: "This is teh best wakeboard in existence. Ever. Don't even argue."
 	) {
+		id
 		name
 		category
 		description
 		price
 		imageUrl
+	}
+}
+
+mutation deleteProduct {
+	deleteOneProduct(where: { id: "ck8gw1hpu0000lr7biier71xy" }) {
+		id
+		name
+		category
 	}
 }
