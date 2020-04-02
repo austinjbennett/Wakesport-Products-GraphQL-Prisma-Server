@@ -10,7 +10,7 @@ query allProducts {
 	}
 }
 
-query singleProducts {
+query singleProduct {
 	Product(id: "ck8atgsrx0007kr7b3w3azya1") {
 		id
 		name
