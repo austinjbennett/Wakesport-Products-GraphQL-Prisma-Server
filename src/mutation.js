@@ -1,4 +1,4 @@
-import { idArg, mutationType, stringArg } from 'nexus'
+import { idArg, mutationType, stringArg, intArg } from 'nexus'
 
 export const Mutation = mutationType({
 	name: 'Mutation',
@@ -12,7 +12,7 @@ export const Mutation = mutationType({
 				name: stringArg({ nullable: false }),
 				category: stringArg(),
 				description: stringArg(),
-				price: stringArg({ nullable: false }),
+				price: intArg({ nullable: false }),
 				imageUrl: stringArg({ nullable: false }),
 			},
 			resolve: (parent, { name, category, description, price, imageUrl }, ctx) => {
@@ -34,7 +34,7 @@ export const Mutation = mutationType({
 				name: stringArg(),
 				category: stringArg(),
 				description: stringArg(),
-				price: stringArg(),
+				price: intArg(),
 				imageUrl: stringArg(),
 			},
 			resolve: (parent, { id, name, category, description, price, imageUrl }, ctx) => {

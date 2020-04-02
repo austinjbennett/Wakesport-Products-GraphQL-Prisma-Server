@@ -74,7 +74,7 @@ export interface NexusGenArgTypes {
       description?: string | null; // String
       imageUrl: string; // String!
       name: string; // String!
-      price: string; // String!
+      price: number; // Int!
     }
     deleteOneProduct: { // args
       where: NexusGenInputs['ProductWhereUniqueInput']; // ProductWhereUniqueInput!
@@ -85,7 +85,7 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
       imageUrl?: string | null; // String
       name?: string | null; // String
-      price?: string | null; // String
+      price?: number | null; // Int
     }
   }
   Query: {
