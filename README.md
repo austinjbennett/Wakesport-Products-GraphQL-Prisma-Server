@@ -63,6 +63,20 @@ query allProducts {
 ```
 
 ```
+query singleProduct {
+	Product(id: "ck8atgsrx0007kr7b3w3azya1") {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
+
+```
+
+```
 query productCategory {
 	Category(category: "Wakeboards") {
 		id
@@ -76,9 +90,55 @@ query productCategory {
 ```
 
 ```
-</details>
-
-
-* All of your source code will be properly uploaded to GitHub :octocat:
-* Your ReadMe file will accurately describe your server install and run process and how to use the APIs
+mutation addProduct {
+	createProduct(
+		name: "Hyperlite Riot Nova"
+		category: "Wakeboards"
+		description: "This is the Riot Nova, it's sick."
+		price: 799
+		imageUrl: "https://www.hyperlite.com/images/square.png"
+	) {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
 ```
+
+```
+mutation updateProduct {
+	updateProduct(
+		id: "ck8ckndoo0000kb7bi8gdw2li"
+		description: "This is teh best wakeboard in existence. Ever. Don't even argue."
+	) {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
+```
+
+```
+mutation deleteProduct {
+	deleteOneProduct(where: { id: "ck8gw1hpu0000lr7biier71xy" }) {
+		id
+		name
+		category
+	}
+}
+```
+
+</details><br>
+
+-   All of your source code will be properly uploaded to GitHub :octocat:  
+    See here: https://github.com/skaduusch/graphql-postgres-docker
+
+-   Your ReadMe file will accurately describe your server install and run process and how to use the APIs
+
+*   [x] You're looking at it. :metal:
