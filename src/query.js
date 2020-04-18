@@ -25,7 +25,8 @@ export const Query = queryType({
 					where: {
 						OR: [
 							{ name: { contains: searchString } },
-							{ description: { contains: searchString } }
+							{ description: { contains: searchString } },
+							// { description: { match: /searchString/gi } },
 						],
 					},
 				});

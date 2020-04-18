@@ -5,9 +5,9 @@
 scalar DateTime
 
 type Mutation {
-  createProduct(category: String, description: String, imageUrl: String!, name: String!, price: Int!): Product!
+  createOneProduct(data: ProductCreateInput!): Product!
   deleteOneProduct(where: ProductWhereUniqueInput!): Product
-  updateProduct(category: String, description: String, id: ID, imageUrl: String, name: String, price: Int): Product!
+  updateOneProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product
 }
 
 type Product {
@@ -19,6 +19,28 @@ type Product {
   name: String!
   price: Int!
   updatedAt: DateTime!
+}
+
+input ProductCreateInput {
+  category: String!
+  createdAt: DateTime
+  description: String!
+  id: String
+  imageUrl: String!
+  name: String!
+  price: Int!
+  updatedAt: DateTime
+}
+
+input ProductUpdateInput {
+  category: String
+  createdAt: DateTime
+  description: String
+  id: String
+  imageUrl: String
+  name: String
+  price: Int
+  updatedAt: DateTime
 }
 
 input ProductWhereUniqueInput {

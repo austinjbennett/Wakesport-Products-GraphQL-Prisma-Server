@@ -9,6 +9,16 @@ query allProducts {
 		imageUrl
 	}
 }
+query searchProducts($searchString: String) {
+	Products(searchString: $searchString) {
+		id
+		name
+		category
+		description
+		price
+		imageUrl
+	}
+}
 
 query singleProduct {
 	Product(id: "ck8atgsrx0007kr7b3w3azya1") {

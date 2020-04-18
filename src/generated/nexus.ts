@@ -19,6 +19,26 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  ProductCreateInput: { // input type
+    category: string; // String!
+    createdAt?: any | null; // DateTime
+    description: string; // String!
+    id?: string | null; // String
+    imageUrl: string; // String!
+    name: string; // String!
+    price: number; // Int!
+    updatedAt?: any | null; // DateTime
+  }
+  ProductUpdateInput: { // input type
+    category?: string | null; // String
+    createdAt?: any | null; // DateTime
+    description?: string | null; // String
+    id?: string | null; // String
+    imageUrl?: string | null; // String
+    name?: string | null; // String
+    price?: number | null; // Int
+    updatedAt?: any | null; // DateTime
+  }
   ProductWhereUniqueInput: { // input type
     id?: string | null; // String
   }
@@ -40,14 +60,16 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  ProductCreateInput: NexusGenInputs['ProductCreateInput'];
+  ProductUpdateInput: NexusGenInputs['ProductUpdateInput'];
   ProductWhereUniqueInput: NexusGenInputs['ProductWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    createProduct: NexusGenRootTypes['Product']; // Product!
+    createOneProduct: NexusGenRootTypes['Product']; // Product!
     deleteOneProduct: NexusGenRootTypes['Product'] | null; // Product
-    updateProduct: NexusGenRootTypes['Product']; // Product!
+    updateOneProduct: NexusGenRootTypes['Product'] | null; // Product
   }
   Product: { // field return type
     category: string; // String!
@@ -69,23 +91,15 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createProduct: { // args
-      category?: string | null; // String
-      description?: string | null; // String
-      imageUrl: string; // String!
-      name: string; // String!
-      price: number; // Int!
+    createOneProduct: { // args
+      data: NexusGenInputs['ProductCreateInput']; // ProductCreateInput!
     }
     deleteOneProduct: { // args
       where: NexusGenInputs['ProductWhereUniqueInput']; // ProductWhereUniqueInput!
     }
-    updateProduct: { // args
-      category?: string | null; // String
-      description?: string | null; // String
-      id?: string | null; // ID
-      imageUrl?: string | null; // String
-      name?: string | null; // String
-      price?: number | null; // Int
+    updateOneProduct: { // args
+      data: NexusGenInputs['ProductUpdateInput']; // ProductUpdateInput!
+      where: NexusGenInputs['ProductWhereUniqueInput']; // ProductWhereUniqueInput!
     }
   }
   Query: {
@@ -108,7 +122,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Mutation" | "Product" | "Query";
 
-export type NexusGenInputNames = "ProductWhereUniqueInput";
+export type NexusGenInputNames = "ProductCreateInput" | "ProductUpdateInput" | "ProductWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
