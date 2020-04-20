@@ -30,13 +30,13 @@ npm run generate
 npm run seed
 ```
 
-You can then launch the Prisma Studio to view the information in the database with:
+You can then launch the Prisma Studio (on port :4000) to view the information in the database with:
 
 ```
 npm run dev
 ```
 
-Or you can experiment with making queries in the Apollo server by running:
+Or you can experiment with making queries in the Apollo server (on port :5000) by running:
 
 ```
 npm start
@@ -45,7 +45,7 @@ npm start
 <details>
 <summary>See Query Samples</summary>
 
-```
+```graphql
 query allProducts {
 	Products {
 		id
@@ -58,7 +58,7 @@ query allProducts {
 }
 ```
 
-```
+```graphql
 query singleProduct {
 	Product(id: "ck8atgsrx0007kr7b3w3azya1") {
 		id
@@ -72,7 +72,7 @@ query singleProduct {
 
 ```
 
-```
+```graphql
 query productCategory {
 	Category(category: "Wakeboards") {
 		id
@@ -85,7 +85,7 @@ query productCategory {
 }
 ```
 
-```
+```graphql
 mutation addProduct {
 	createProduct(
 		name: "Hyperlite Riot Nova"
@@ -104,7 +104,7 @@ mutation addProduct {
 }
 ```
 
-```
+```graphql
 mutation updateProduct {
 	updateProduct(
 		id: "ck8ckndoo0000kb7bi8gdw2li"
@@ -120,7 +120,7 @@ mutation updateProduct {
 }
 ```
 
-```
+```graphql
 mutation deleteProduct {
 	deleteOneProduct(where: { id: "ck8gw1hpu0000lr7biier71xy" }) {
 		id
