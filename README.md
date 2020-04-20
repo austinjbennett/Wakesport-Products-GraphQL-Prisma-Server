@@ -1,4 +1,4 @@
-# graphql-postgres-docker
+# Wakeboard Store App GraphQL Prisma Server
 
 GraphQL, PostgreSQL, Docker, Prisma, Nexus, Apollo
 
@@ -6,11 +6,7 @@ GraphQL, PostgreSQL, Docker, Prisma, Nexus, Apollo
  Prisma was used, see prisma folder here: https://github.com/skaduusch/graphql-postgres-docker/tree/master/prisma
 
 :star: Docker-based PostgreSQL, MySQL, or MongoDB as your data store  
- To launch docker with a PostgreSQL database run:
-
-```
-npm run launchDocker
-```
+ See below on how to set up the docker container
 
 :star: At least 3 Query resolvers to get data from your server  
  See queries here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/query.js
@@ -24,7 +20,7 @@ npm run launchDocker
 
 :star: Your app will be deployable locally using Docker and will have seed data entered into the datastore.
 
-## To deploy the server once downloading the code base run the following npm scripts:
+## To deploy the server once downloading the code base and while Docker is running on your system, run the following npm scripts in order:
 
 ```
 npm install
