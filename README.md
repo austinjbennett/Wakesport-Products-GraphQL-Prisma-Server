@@ -43,8 +43,9 @@ npm start
 ```
 
 <details>
-<summary>See Query Samples</summary>
-### Query Products:
+<summary>See Query Samples</summary>.
+
+## Query Products:  
 ```graphql
 query allProducts {
 	Products {
@@ -85,7 +86,7 @@ query productCategory {
 }
 ```
 
-### Add a new product:
+## Add a new product:
 ```graphql
 mutation addProduct {
 	createProduct(
@@ -105,7 +106,7 @@ mutation addProduct {
 }
 ```
 
-### Update an existing product:
+## Update an existing product:
 use the actual id string of the product you want to update
 ```graphql
 mutation updateProduct {
@@ -123,7 +124,7 @@ mutation updateProduct {
 }
 ```
 
-### Delete an existing product:
+## Delete an existing product:
 use the actual id string of the product you want to delete
 ```graphql
 mutation deleteProduct {
