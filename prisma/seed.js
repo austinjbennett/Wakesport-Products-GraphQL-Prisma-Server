@@ -33,33 +33,10 @@ async function main() {
 	} catch (err) {
 	  console.log(err)
 	}
-  }
-  
-// async function createProduct() {
-// 	try {
-// 		await prismaClient.product.create({
-// 			data: {
-// 				name: 'Ronix One Timebomb',
-// 				category: 'Wakeboards',
-// 				description: 'The best wakeboard you can buy',
-// 				price: '599.99',
-// 			},	
-// 		});
-// 	} catch (error) {
-// 		console.error('Error my dude:', error);
-// 	}
-// }
-
-// async function main() {
-// 	try {
-// 		await createProduct();
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// }
+}
 
 main()
-	.catch(e => console.error(error))
+	.catch(e => console.error(e))
 	.finally(async () => {
 		await prismaClient.disconnect()
 });
