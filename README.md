@@ -1,4 +1,4 @@
-# graphql-postgres-docker
+# Wakeboard Store App GraphQL Prisma Server
 
 GraphQL, PostgreSQL, Docker, Prisma, Nexus, Apollo
 
@@ -6,11 +6,7 @@ GraphQL, PostgreSQL, Docker, Prisma, Nexus, Apollo
  Prisma was used, see prisma folder here: https://github.com/skaduusch/graphql-postgres-docker/tree/master/prisma
 
 :star: Docker-based PostgreSQL, MySQL, or MongoDB as your data store  
- To launch docker with a PostgreSQL database run:
-
-```
-npm run launchDocker
-```
+ See below on how to set up the docker container
 
 :star: At least 3 Query resolvers to get data from your server  
  See queries here: https://github.com/skaduusch/graphql-postgres-docker/blob/master/src/query.js
@@ -24,7 +20,7 @@ npm run launchDocker
 
 :star: Your app will be deployable locally using Docker and will have seed data entered into the datastore.
 
-## To deploy the server once downloading the code base run the following npm scripts:
+## To deploy the server once downloading the code base and while Docker is running on your system, run the following npm scripts in order:
 
 ```
 npm install
@@ -34,22 +30,23 @@ npm run generate
 npm run seed
 ```
 
-You can then launch the Prisma Studio to view the information in the database with:
+You can then launch the Prisma Studio (on port :4000) to view the information in the database with:
 
 ```
 npm run dev
 ```
 
-Or you can experiment with making queries in the Apollo server by running:
+Or you can experiment with making queries in the Apollo server (on port :5000) by running:
 
 ```
 npm start
 ```
 
 <details>
-<summary>See Query Samples</summary>
+<summary>See Query Samples</summary>.
 
-```
+## Query Products:  
+```graphql
 query allProducts {
 	Products {
 		id
@@ -62,7 +59,7 @@ query allProducts {
 }
 ```
 
-```
+```graphql
 query singleProduct {
 	Product(id: "ck8atgsrx0007kr7b3w3azya1") {
 		id
@@ -76,7 +73,7 @@ query singleProduct {
 
 ```
 
-```
+```graphql
 query productCategory {
 	Category(category: "Wakeboards") {
 		id
@@ -89,7 +86,8 @@ query productCategory {
 }
 ```
 
-```
+## Add a new product:
+```graphql
 mutation addProduct {
 	createProduct(
 		name: "Hyperlite Riot Nova"
@@ -108,7 +106,9 @@ mutation addProduct {
 }
 ```
 
-```
+## Update an existing product:
+use the actual id string of the product you want to update
+```graphql
 mutation updateProduct {
 	updateProduct(
 		id: "ck8ckndoo0000kb7bi8gdw2li"
@@ -124,7 +124,9 @@ mutation updateProduct {
 }
 ```
 
-```
+## Delete an existing product:
+use the actual id string of the product you want to delete
+```graphql
 mutation deleteProduct {
 	deleteOneProduct(where: { id: "ck8gw1hpu0000lr7biier71xy" }) {
 		id
